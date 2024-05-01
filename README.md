@@ -8,10 +8,10 @@ This project implements a RESTful API using Spring Boot for managing user resour
 
 To understand RESTful API design and best practices for implementation, the following resources were used:
 
-- [RESTful API Design: Best Practices in a Nutshell](https://restfulapi.net/)
-- [Error Handling for REST with Spring | Baeldung](https://www.baeldung.com/rest-api-error-handling-best-practices)
-- [Testing in Spring Boot | Baeldung](https://www.baeldung.com/spring-boot-testing)
-- [Testing | Spring](https://spring.io/guides/gs/testing-web/)
+- [RESTful API Design: Best Practices in a Nutshell](https://phauer.com/2015/restful-api-design-best-practices/)
+- [Error Handling for REST with Spring | Baeldung](https://www.baeldung.com/exception-handling-for-rest-with-spring)
+- [Testing in Spring Boot | Baeldung](https://www.baeldung.com/spring-boot-testing#unit-testing-with-webmvctest)
+- [Testing | Spring](https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html#spring-mvc-test-server)
 
 ## Requirements
 
@@ -59,8 +59,9 @@ To run the project, follow these steps:
 
 1. Clone the repository: `git clone <repository-url>`
 2. Navigate to the project directory: `cd <project-directory>`
-3. Create image for docker
 4. Run docker compose file`docker-compose up` with environment variables:
 -  DB_PASSWORD
 -  DB_USERNAME
+-  INIT_MODE (default: auto)
+-  DB_ENDPOINT (default: db - name of the db container)
 
