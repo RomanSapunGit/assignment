@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  assignment_app:
+    image: romannnn/social-media:backend
+    build: src
+    container_name: backendApp
+    environment:
+      - DB_PASSWORD
+      - DB_USERNAME
+      - DB_ENDPOINT
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql_database
+  mysql_database:
+    image: 'mysql:8.1.0'
+    container_name: db
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=db
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mineSql
+    restart: unless-stopped
+volumes:
+  mysql-data:
